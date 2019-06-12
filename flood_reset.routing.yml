@@ -1,0 +1,8 @@
+flood_reset.reset_user:
+  path: '/user/{uid}/flood-reset'
+  defaults:
+    _title: 'Reset User Flood'
+    _controller: '\Drupal\flood_reset\Controller\FloodResetController::clearUserFlood'
+  requirements:
+    _permission: 'reset user flood'
+

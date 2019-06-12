@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_entity_operation().
+ */
+function flood_reset_entity_operation(\Drupal\Core\Entity\EntityInterface $entity) {
+  $operations = [];
+
+  if ($entity->getEntityTypeId() === 'user') {
+    $operations['flood_reset'] = array(
+      'title' => t('Reset Login Timeout'),
+      'url' => \Drupal\Core\Url::fromRoute('flood_reset.reset_user', ['uid' => $entity->id()]),
+      'weight' => 50,
+    );
+  }
+
+  return $operations;
+}

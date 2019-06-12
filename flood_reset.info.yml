@@ -1,0 +1,6 @@
+name: 'Flood timeout reset'
+type: module
+description: 'Resets the user login timeout due to flood count'
+core: 8.x
+
+
